@@ -56,8 +56,9 @@ pipeline {
       steps {
         echo 'building the application...'
         // echo " deploying version: ${params.VERSION}"
-        cd 'webapp'
-          sh 'docker-compose up -d'
+        dir('webapp'):{
+          sh 'pwd'
+        }
       }
     }
   }
