@@ -38,11 +38,11 @@ pipeline {
   }
   post {
     always {
-      pipeline configured
+      echo 'pipeline configured'
       //
     }
     failure {
-      pipeline failed
+      echo 'pipeline failed'
     
       //
     }
