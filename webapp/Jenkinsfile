@@ -36,16 +36,16 @@ pipeline {
       }
     }
   }
-  post {
-    always {
-      echo 'pipeline configured'
-      //
-    }
-    failure {
-      echo 'pipeline failed'
+  // post {
+  //   always {
+  //     echo 'pipeline configured'
+  //     //
+  //   }
+  //   failure {
+  //     echo 'pipeline failed'
     
-      //
-    }
-  }
+  //     //
+  //   }
+  // }
   
 }
