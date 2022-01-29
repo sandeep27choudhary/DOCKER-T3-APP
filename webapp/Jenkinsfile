@@ -2,6 +2,17 @@
 pipeline {
   
   agent any
+  // tools {
+  //   //tools we want to use
+  // }
+
+  parameters {
+    // - Type(name,dafaultValue,description) eg: string(), choice(),booleanParam()
+    // string(name: 'VERSION', defaultValue: '', description: 'version to deploy')
+    choice(name: 'VERSION', choices: ['1.1.0', '1.2.0'], description: '')
+    booleanParam(name: 'executeTests', defaultValue: true, description: '')
+
+  }
   environment {
     //define env variables here
     NEW_VERSION = '1.2.0'
@@ -24,8 +35,15 @@ pipeline {
       //     CODE_CHANGEs == true
       //   }
       // }
+
+      when {
+        expression{
+          params.executeTests == true
+        }
+      }
       steps {
         echo 'building the application...'
+
       }
     }
     
@@ -33,6 +51,7 @@ pipeline {
       
       steps {
         echo 'building the application...'
+        echo " deploying version: ${VERSION}"
       }
     }
   }
