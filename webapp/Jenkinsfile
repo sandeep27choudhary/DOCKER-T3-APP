@@ -1,11 +1,11 @@
-CODE_CHANGES = getGitChanges()
+// CODE_CHANGES = getGitChanges()
 pipeline {
   
   agent any
-  // environment {
-  //   //define env variables here
-  //   NEW_VERSION = '1.2.0'
-  // }
+  environment {
+    //define env variables here
+    NEW_VERSION = '1.2.0'
+  }
   
   stages {
     
@@ -36,16 +36,16 @@ pipeline {
       }
     }
   }
-  // post {
-  //   always {
-  //     echo 'pipeline configured'
-  //     //
-  //   }
-  //   failure {
-  //     echo 'pipeline failed'
+  post {
+    always {
+      echo 'pipeline configured'
+      //
+    }
+    failure {
+      echo 'pipeline failed'
     
-  //     //
-  //   }
-  // }
+      //
+    }
+  }
   
 }
