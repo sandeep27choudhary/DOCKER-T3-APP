@@ -56,7 +56,7 @@ pipeline {
       steps {
         echo 'building the application...'
         echo " deploying version: ${params.VERSION}"
-        sh 'docker-compose up -f ./webapp/'
+        sh 'docker-compose up -f ./webapp/Dockerfile.yaml'
       }
     }
   }
