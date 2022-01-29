@@ -38,9 +38,12 @@ pipeline {
   }
   post {
     always {
+      pipeline configured
       //
     }
     failure {
+      pipeline failed
+    
       //
     }
   }
