@@ -6,13 +6,13 @@ pipeline {
   //   //tools we want to use
   // }
 
-  parameters {
-    // - Type(name,dafaultValue,description) eg: string(), choice(),booleanParam()
-    // string(name: 'VERSION', defaultValue: '', description: 'version to deploy')
-    choice(name: 'VERSION', choices: ['1.1.0', '1.2.0'], description: '')
-    booleanParam(name: 'executeTests', defaultValue: true, description: '')
+  // parameters {
+  //   // - Type(name,dafaultValue,description) eg: string(), choice(),booleanParam()
+  //   // string(name: 'VERSION', defaultValue: '', description: 'version to deploy')
+  //   choice(name: 'VERSION', choices: ['1.1.0', '1.2.0'], description: '')
+  //   booleanParam(name: 'executeTests', defaultValue: true, description: '')
 
-  }
+  // }
   environment {
     //define env variables here
     NEW_VERSION = '1.2.0'
@@ -27,7 +27,7 @@ pipeline {
         //   //scripts here
         // }
         echo 'building the application...'
-        echo "building version ${NEW_VERSION}"
+        // echo "building version ${NEW_VERSION}"
         sh 'docker build -t sancho27/webapp:1.0 ./webapp/'
       }
     }
@@ -55,7 +55,7 @@ pipeline {
       
       steps {
         echo 'building the application...'
-        echo " deploying version: ${params.VERSION}"
+        // echo " deploying version: ${params.VERSION}"
         cd 'webapp'
         sh 'docker-compose -f ./../docker-compose.yaml up'
       }
