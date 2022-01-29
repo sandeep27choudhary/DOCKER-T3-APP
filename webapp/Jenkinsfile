@@ -23,9 +23,9 @@ pipeline {
     stage("build") {
       
       steps {
-        script {
-          //scripts here
-        }
+        // script {
+        //   //scripts here
+        // }
         echo 'building the application...'
         echo "building version ${NEW_VERSION}"
       }
