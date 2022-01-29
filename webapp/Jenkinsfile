@@ -18,12 +18,12 @@ pipeline {
     }
     
     stage("test") {
-      when {
-        expression {
-          //boolean expression
-          CODE_CHANGEs == true
-        }
-      }
+      // when {
+      //   expression {
+      //     //boolean expression
+      //     CODE_CHANGEs == true
+      //   }
+      // }
       steps {
         echo 'building the application...'
       }
