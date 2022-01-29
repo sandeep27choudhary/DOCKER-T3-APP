@@ -57,6 +57,7 @@ pipeline {
         echo 'building the application...'
         // echo " deploying version: ${params.VERSION}"
         dir('webapp') {
+          sh 'ls'
           sh 'docker-compose up'
         }
       }
