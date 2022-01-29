@@ -20,7 +20,6 @@ pipeline {
   }
   
   stages {
-
     stage ("init") {
       steps {
         script {
@@ -30,7 +29,6 @@ pipeline {
     }
     
     stage("build") {
-      
       steps {
         script {
           //scripts here
