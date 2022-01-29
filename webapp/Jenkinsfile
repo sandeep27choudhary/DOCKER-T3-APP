@@ -21,7 +21,7 @@ pipeline {
       when {
         expression {
           //boolean expression
-          BRANCH_NAME == 'jenkins' && CODE_CHANGEs == true
+          CODE_CHANGEs == true
         }
       }
       steps {
