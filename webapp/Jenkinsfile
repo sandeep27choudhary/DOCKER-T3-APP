@@ -1,6 +1,11 @@
+CODE_CHANGES = getGitChanges()
 pipeline {
   
   agent any
+  environment {
+    //define env variables here
+    NEW_VERSION = '1.2.0'
+  }
   
   stages {
     
@@ -8,11 +13,17 @@ pipeline {
       
       steps {
         echo 'building the application...'
+        echo "building version ${NEW_VERSION}"
       }
     }
     
     stage("test") {
-      
+      when {
+        expression {
+          //boolean expression
+          BRANCH_NAME == 'jenkins' && CODE_CHANGEs == true
+        }
+      }
       steps {
         echo 'building the application...'
       }
